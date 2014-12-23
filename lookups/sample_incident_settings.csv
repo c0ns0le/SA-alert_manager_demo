@@ -1,0 +1,3 @@
+"_key",alert,"alert_script","auto_assign","auto_assign_owner","auto_previous_resolve","auto_ttl_resolve",category,priority,"run_alert_script",subcategory,tags
+54997825fb63406b9f773fc3,"alert_manager_demoalert1_splunk_errors_5m",,1,demo1,1,0,Errors,high,0,Internal,"splunkd error"
+54997a08fb63406b9f773fc7,"alert_manager_demoalert2_splunk_warnings_5m",,0,unassigned,0,1,Warnings,medium,0,Internal,"splunkd warning"

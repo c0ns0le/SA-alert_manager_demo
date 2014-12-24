@@ -7,6 +7,7 @@
 - **2014-12-24** simon@balz.me
 	- Better sample data
 	- Added more sample alerts
+    - Added setup view to load static data and enable/disable demo alerts
 - **2014-12-23** simon@balz.me
 	- Added initial demo data, demo alerts
 	- Added load data search

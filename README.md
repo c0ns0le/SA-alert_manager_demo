@@ -4,6 +4,9 @@
 - **Version**: 		0.1
 
 ## Changelog
+- **2014-12-24** simon@balz.me
+	- Better sample data
+	- Added more sample alerts
 - **2014-12-23** simon@balz.me
 	- Added initial demo data, demo alerts
 	- Added load data search

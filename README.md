@@ -1,10 +1,10 @@
 # Supporting Add-on for Alert Manager Demo Data
 - **Authors**:		Simon Balz <simon@balz.me>, Mika Borner <mika.borner@gmail.com>
 - **Description**:	Supporting Add-on for Alert Manager Demo Data (https://github.com/simcen/alert_manager)
-- **Version**: 		0.1
+- **Version**: 		0.1.1
 
 ## Release Notes
-- **v0.1**  /   2014-12-26
+- **v0.1.1**  /   2014-12-26
     - Initial working version
 
 ## Changelog
@@ -12,6 +12,7 @@
     - Setup view improvements
     - Fixed a bug with wrong extenion of sample data files
     - Released v0.1
+    - Documentation improvement
 - **2014-12-25** simon@balz.me
     - Added functionality to load alert metadata
 - **2014-12-24** simon@balz.me
@@ -26,6 +27,8 @@
 
 ## Prerequisites
 - Splunk v6.2 and above
+- Alert Manager app (<https://github.com/simcen/alert_manager>) installed
+- Add-on for Alert Manager (<https://github.com/simcen/TA-alert_manager>) installed
 
 ## Usage
 ### Deployment Matrix

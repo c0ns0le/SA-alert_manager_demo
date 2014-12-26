@@ -1,0 +1,44 @@
+<dashboard script="demo_data.js">
+  <label>Demo Data Setup</label>
+  <row>
+    <panel>
+      <title>Static Demo Data</title>
+      <html>
+        <p>Static demo data adds pre-generated incident data to the "alerts" index, both metadata and incident changes.<br />
+        The timestamp will be changed to "today", so selecting "Last 24 hours" in the Alert Manager dashboards will show demo data.<br />
+        To load demo data, run these actions below in the correct order by clicking the buttons: </p>
+        <ol>
+          <li><button id="load_sample_metadata">Load Sample Alert Metadata</button></li>          
+          <li><button id="load_sample_incidents">Load Sample Incidents</button></li>
+          <li><button id="load_sample_incident_settings">Load Sample Incidents Settings</button></li>
+        </ol>
+      </html>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <title>Demo Alerts</title>
+      <html>
+        <p>Demo Alerts are Splunk saved search with the alert handler action enabled (script alert_handler.py) to demonstrate the incident workflow. <br />Each alert has different settings:</p>
+        <ul>
+          <li><b>demo_alert1_splunk_errors</b>: alert.expires set to 1h, auto_ttl_resolve is set in the Alert Manager Incident Settings --> incidents of this alert will be auto resolved after 1 hour. Auto-assign new incidents to 'demo1'</li>
+          <li><b>demo_alert2_splunk_warnings</b>: auto_previous_resolve activated --> only latest incident of this alert has status 'new' and so will be shown on the incident posture dashboard</li>
+          <li><b>demo_alert3_rt_splunk_info</b>: Realtime alert; Auto-assign new incidents to 'demo2'</li>
+        </ul>
+        <p>You can enable/disable these alerts to see the alert manager live in action, in addition to the static demo data.</p>
+      </html>      
+      <table id="demo_alerts">
+        <search id="demo_alerts_search">
+          <query>| rest splunk_server=local /services/admin/savedsearch | search title="demo_alert*" eai:acl.app="SA-alert_manager_demo" | eval action=if(disabled=1,"disabled","enabled") | table title, eai:acl.app, dispatch.earliest_time, dispatch.latest_time, cron_schedule, alert.severity, alert.expires, action.script.filename, action.script, disabled, action</query>
+          <earliest>0</earliest>
+          <latest></latest>
+        </search>
+        <option name="wrap">true</option>
+        <option name="rowNumbers">false</option>
+        <option name="dataOverlayMode">none</option>
+        <option name="drilldown">none</option>
+        <option name="count">10</option>
+      </table>
+    </panel>
+  </row>
+</dashboard>

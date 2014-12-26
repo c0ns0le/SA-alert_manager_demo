@@ -112,40 +112,44 @@ require([
     // Save Settings
     $(document).on("click", "#load_sample_metadata", function(event){
         // run ajax call to load sample metadata
-        alert("(dummy) Sample alert metadata loaded");
 
         /*data = JSON.stringify(data);
         var post_data = {
             contents    : data
-        };
+        };*/
 
         //var url = 'http://splunk.local/en-GB/custom/alert_manager/alert_settings/save';
-        var url = splunkUtil.make_url('/custom/alert_manager/user_settings/save');
+        var url = splunkUtil.make_url('/custom/SA-alert_manager_demo/demo_data/load_demo_data');
         console.debug("url", url);
+
+        $("<img />").attr('src', splunkUtil.make_url('/static/app/SA-alert_manager_demo/wait.gif')).attr('id', 'wait').height(21).insertAfter($("#load_sample_metadata"));
 
         $.ajax( url,
                 {
                     uri:  url,
-                    type: 'POST',
-                    data: post_data,
+                    type: 'GET',
+                    //data: post_data,
                     
                    
                     success: function(jqXHR, textStatus){
                         // Reload the table
-                        mvc.Components.get("user_settings_search").startSearch()
+                        alert("Sample data successfully loaded.")
+                        $("#wait").remove();
                         console.debug("success");
                     },
                     
                     // Handle cases where the file could not be found or the user did not have permissions
                     complete: function(jqXHR, textStatus){
                         console.debug("complete");
+                        $("#wait").remove();
                     },
                     
                     error: function(jqXHR,textStatus,errorThrown) {
                         console.log("Error");
+                        $("#wait").remove();
                     } 
                 }
-        );*/
+        );
     });
 
     new SavedSearchManager({
@@ -158,10 +162,12 @@ require([
         app: "SA-alert_manager_demo"
     });
     $(document).on("click", "#load_sample_incidents", function(event){
+        $("<img />").attr('src', splunkUtil.make_url('/static/app/SA-alert_manager_demo/wait.gif')).attr('id', 'wait').height(21).insertAfter($("#load_sample_incidents"));
         var sample_incidents_search = mvc.Components.getInstance('sample_incidents_search');
         sample_incidents_search.startSearch();
         sample_incidents_search.on("search:done", function(properties) {
             alert("Sample incidents loaded!");
+            $("#wait").remove();
         });
     });
 
@@ -176,10 +182,12 @@ require([
     });
     $(document).on("click", "#load_sample_incident_settings", function(event){
         // Create saved search manager here, run demo_loaddata_sample_incidents_settings search
+        $("<img />").attr('src', splunkUtil.make_url('/static/app/SA-alert_manager_demo/wait.gif')).attr('id', 'wait').height(21).insertAfter($("#load_sample_incident_settings"));
         var sample_incident_settings_search = mvc.Components.getInstance('sample_incident_settings_search');
         sample_incident_settings_search.startSearch();
         sample_incident_settings_search.on("search:done", function(properties) {
             alert("Sample incident settings loaded!");
+            $("#wait").remove();
         });
     });
 });

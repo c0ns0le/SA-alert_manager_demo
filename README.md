@@ -15,6 +15,7 @@
     - Documentation improvement
     - Added support to clear incidents and incident settings
     - Changed sample data loads to append instead of overwrite
+    - Additional static sample data
 - **2014-12-25** simon@balz.me
     - Added functionality to load alert metadata
 - **2014-12-24** simon@balz.me

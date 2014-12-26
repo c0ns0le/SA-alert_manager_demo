@@ -1,10 +1,10 @@
 # Supporting Add-on for Alert Manager Demo Data
 - **Authors**:		Simon Balz <simon@balz.me>, Mika Borner <mika.borner@gmail.com>
 - **Description**:	Supporting Add-on for Alert Manager Demo Data (https://github.com/simcen/alert_manager)
-- **Version**: 		0.1
+- **Version**: 		0.1.1
 
 ## Release Notes
-- **v0.1**  /   2014-12-26
+- **v0.1.1**  /   2014-12-26
     - Initial working version
 
 ## Changelog

@@ -115,8 +115,19 @@ class DemoData(controllers.BaseController):
 
 
     @expose_page(must_login=True, methods=['GET']) 
-    def clear_demo_data(self, contents, **kwargs):
-        logger.info("Clear demo data")   
+    def clear_data(self, **kwargs):
+        user = cherrypy.session['user']['name']
+        sessionKey = cherrypy.session.get('sessionKey')
+        
+        logger.info("Clearing demo data...")
+
+        uri = '/servicesNS/nobody/alert_manager/storage/collections/data/alert_settings'
+        serverResponse, serverContent = rest.simpleRequest(uri, sessionKey=sessionKey, method='DELETE')   
+        logger.info("alert_settings cleared.")
+
+        uri = '/servicesNS/nobody/alert_manager/storage/collections/data/incidents'
+        serverResponse, serverContent = rest.simpleRequest(uri, sessionKey=sessionKey, method='DELETE')   
+        logger.info("incidents cleared.")
 
         return 'Demo data has been cleared'
 

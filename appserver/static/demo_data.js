@@ -152,6 +152,44 @@ require([
         );
     });
 
+    $(document).on("click", "#clear_data", function(event){
+        
+        if(confirm('Are you sure to remove all incident and incident settings?')) {
+                
+            var url = splunkUtil.make_url('/custom/SA-alert_manager_demo/demo_data/clear_data');
+            console.debug("url", url);
+
+            $("<img />").attr('src', splunkUtil.make_url('/static/app/SA-alert_manager_demo/wait.gif')).attr('id', 'wait').height(21).insertAfter($("#clear_data"));
+
+            $.ajax( url,
+                    {
+                        uri:  url,
+                        type: 'GET',
+                        //data: post_data,
+                        
+                       
+                        success: function(jqXHR, textStatus){
+                            // Reload the table
+                            alert("Incident data successfully cleared.")
+                            $("#wait").remove();
+                            console.debug("success");
+                        },
+                        
+                        // Handle cases where the file could not be found or the user did not have permissions
+                        complete: function(jqXHR, textStatus){
+                            console.debug("complete");
+                            $("#wait").remove();
+                        },
+                        
+                        error: function(jqXHR,textStatus,errorThrown) {
+                            console.log("Error");
+                            $("#wait").remove();
+                        } 
+                    }
+            );
+        }
+    });
+
     new SavedSearchManager({
         id: "sample_incidents_search",
         searchname: "demo_loaddata_sample_incidents",

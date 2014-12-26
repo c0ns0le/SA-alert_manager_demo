@@ -13,6 +13,8 @@
     - Fixed a bug with wrong extenion of sample data files
     - Released v0.1
     - Documentation improvement
+    - Added support to clear incidents and incident settings
+    - Changed sample data loads to append instead of overwrite
 - **2014-12-25** simon@balz.me
     - Added functionality to load alert metadata
 - **2014-12-24** simon@balz.me
@@ -61,6 +63,8 @@
 2. Restart Splunk
 3. Open Splunk -> Goto the 'Alert Manager Demo Data' app
 4. Follow the instructions
+
+**Note**: If you don't use the default "alerts" index (check at your alert manager's app setup: <http://your_splunk_server:8000/en-US/manager/alert_manager/apps/local/alert_manager/setup?action=edit>), copy default/inputs.conf to local/ and adjust the index parameter.
 
 ## Known Issues
 - Demo data is not perfect. There are only resolved inicdents in the last 24 hours. Will be fixed later

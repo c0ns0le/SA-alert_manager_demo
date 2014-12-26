@@ -1,0 +1,4 @@
+"_key",alert,"auto_assign","auto_assign_owner","auto_previous_resolve","auto_ttl_resolve",category,priority,"run_alert_script",subcategory,tags
+549a6fa1fb63407df9654e1b,"demo_alert1_splunk_errors",1,demo1,0,1,Errors,critical,0,Internal,"splunk error"
+549a6fa1fb63407df9654e1c,"demo_alert2_splunk_warnings",0,unassigned,1,0,Warnings,medium,0,Internal,"splunk warning"
+549a6fa1fb63407df9654e1d,"demo_alert3_rt_splunk_info",1,demo2,1,0,Info,low,0,Internal,"splunk info"

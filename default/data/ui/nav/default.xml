@@ -1,0 +1,5 @@
+<nav search_view="search" color="#D25B3B">
+  <view name="setup" default='true' />  
+  <view name="search" />  
+  <view name="alerts" />    
+</nav>

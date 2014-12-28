@@ -38,7 +38,7 @@
       </html>      
       <table id="demo_alerts">
         <search id="demo_alerts_search">
-          <query>| rest splunk_server=local /services/admin/savedsearch | search title="demo_alert*" eai:acl.app="SA-alert_manager_demo" | eval action=if(disabled=1,"disabled","enabled") | table title, eai:acl.app, dispatch.earliest_time, dispatch.latest_time, cron_schedule, alert.severity, alert.expires, action.script.filename, action.script, disabled, action</query>
+          <query>| rest splunk_server=local /services/admin/savedsearch | search title="demo_alert*" eai:acl.app="SA-alert_manager_demo" | eval action=if(disabled=1,"disabled","enabled") | table title, eai:acl.app, dispatch.earliest_time, dispatch.latest_time, cron_schedule, alert_type, alert_comparator, alert_condition, alert_threshold, alert.severity, alert.expires, action.script.filename, action.script, disabled, action</query>
           <earliest>0</earliest>
           <latest></latest>
         </search>

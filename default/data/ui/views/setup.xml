@@ -11,7 +11,16 @@
           <li><button id="load_sample_metadata">Load Sample Alert Metadata</button></li>          
           <li><button id="load_sample_incidents">Load Sample Incidents</button></li>
           <li><button id="load_sample_incident_settings">Load Sample Incidents Settings</button></li>
+          <li><button id="load_sample_alert_users">Load Sample Alert Users</button></li>
         </ol>
+        <h2>Clear Data</h2>
+        <p><span style="color: red; font-weight: bold">** DANGER **</span> Clear data will remove <b><i>ALL</i></b> incidents and their settings!<br />Clear data only after demo/testing. If you already have real alerts and incidents, use at our own risk! In this case, resolve demo incidents manually.</p>
+        <ol>
+          <li>Disable demo alerts (see panel below)</li>
+          <li><button id="clear_data">Clear data</button></li>
+          <li>Clear "alerts" index, (refer to <a href="http://docs.splunk.com/Documentation/Splunk/latest/Indexer/RemovedatafromSplunk#Remove_data_from_one_or_all_indexes">Splunk documentation</a>)</li>
+        </ol>
+        <b>Note:</b> Loading demo data only appends new items and won't overwrite any pre-existing alert meta, incident or incident setting data. 
       </html>
     </panel>
   </row>
@@ -29,7 +38,7 @@
       </html>      
       <table id="demo_alerts">
         <search id="demo_alerts_search">
-          <query>| rest splunk_server=local /services/admin/savedsearch | search title="demo_alert*" eai:acl.app="SA-alert_manager_demo" | eval action=if(disabled=1,"disabled","enabled") | table title, eai:acl.app, dispatch.earliest_time, dispatch.latest_time, cron_schedule, alert.severity, alert.expires, action.script.filename, action.script, disabled, action</query>
+          <query>| rest splunk_server=local /services/admin/savedsearch | search title="demo_alert*" eai:acl.app="SA-alert_manager_demo" | eval action=if(disabled=1,"disabled","enabled") | table title, eai:acl.app, dispatch.earliest_time, dispatch.latest_time, cron_schedule, alert_type, alert_comparator, alert_condition, alert_threshold, alert.severity, alert.expires, action.script.filename, action.script, disabled, action</query>
           <earliest>0</earliest>
           <latest></latest>
         </search>

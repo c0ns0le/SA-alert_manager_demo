@@ -8,6 +8,9 @@
     - Initial working version
 
 ## Changelog
+- **2014-12-28** simon@balz.me
+    - Fixed incident change sample data according to a bugfix in auto_ttl_resolve scenario
+    - Added alert_users sample data
 - **2014-12-26** simon@balz.me
     - Setup view improvements
     - Fixed a bug with wrong extenion of sample data files

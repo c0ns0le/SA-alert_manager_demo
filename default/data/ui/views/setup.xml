@@ -11,6 +11,7 @@
           <li><button id="load_sample_metadata">Load Sample Alert Metadata</button></li>          
           <li><button id="load_sample_incidents">Load Sample Incidents</button></li>
           <li><button id="load_sample_incident_settings">Load Sample Incidents Settings</button></li>
+          <li><button id="load_sample_alert_users">Load Sample Alert Users</button></li>
         </ol>
         <h2>Clear Data</h2>
         <p><span style="color: red; font-weight: bold">** DANGER **</span> Clear data will remove <b><i>ALL</i></b> incidents and their settings!<br />Clear data only after demo/testing. If you already have real alerts and incidents, use at our own risk! In this case, resolve demo incidents manually.</p>

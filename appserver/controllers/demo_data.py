@@ -125,6 +125,10 @@ class DemoData(controllers.BaseController):
         serverResponse, serverContent = rest.simpleRequest(uri, sessionKey=sessionKey, method='DELETE')   
         logger.info("alert_settings cleared.")
 
+        uri = '/servicesNS/nobody/alert_manager/storage/collections/data/alert_users'
+        serverResponse, serverContent = rest.simpleRequest(uri, sessionKey=sessionKey, method='DELETE')   
+        logger.info("alert_users cleared.")
+
         uri = '/servicesNS/nobody/alert_manager/storage/collections/data/incidents'
         serverResponse, serverContent = rest.simpleRequest(uri, sessionKey=sessionKey, method='DELETE')   
         logger.info("incidents cleared.")

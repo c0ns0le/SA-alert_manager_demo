@@ -1,9 +1,11 @@
 # Supporting Add-on for Alert Manager Demo Data
 - **Authors**:		Simon Balz <simon@balz.me>, Mika Borner <mika.borner@gmail.com>
 - **Description**:	Supporting Add-on for Alert Manager Demo Data (https://github.com/simcen/alert_manager)
-- **Version**: 		0.2
+- **Version**: 		1.0
 
 ## Release Notes
+- **v1.0**    /   2015-01-19
+    - Final release for Splunk Apptitude submission
 - **v0.2**    /   2014-12-28
     - Better sample data
     - Setup view enhancements

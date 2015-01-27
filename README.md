@@ -15,6 +15,8 @@
     - Initial working version
 
 ## Changelog
+- **2015-01-27** simon@balz.me
+    - Updated alert_users sample according the notify_user change
 - **2014-12-28** simon@balz.me
     - Fixed incident change sample data according to a bugfix in auto_ttl_resolve scenario
     - Added alert_users sample data
